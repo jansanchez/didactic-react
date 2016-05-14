@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    paso1: ['./source/js/paso1.jsx']
+    paso1: ['./source/app/paso1.jsx']
   },
   output: {
     path: './public/static/js/',
