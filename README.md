@@ -30,7 +30,10 @@ Para el desarrollo de estos demos básicos usaremos módulos hechos en node.js, 
 
 ### Express JS
 
+Express es una infraestructura de aplicaciones web Node.js mínima y flexible que proporciona un conjunto sólido de características para las aplicaciones web y móviles.
+
 ### JSX
+
 
 
 ### Webpack
