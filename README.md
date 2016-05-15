@@ -3,8 +3,11 @@
 Repositorio donde realizaremos ejemplos del uso de ReactJS, desde cero.
 
 ## Paso 1
-
 Para realizar el ejemplo más básico del uso de ReactJS escribiremos los siguientes archivos:
+
+- public/paso1.html
+- app/paso1.jsx
+- app/components/MiComponente.jsx
 
 ### public/paso1.html
 
@@ -24,9 +27,9 @@ En el archivo **paso1.html** escribiremos un nuevo documento html, en el cual ag
 </html>
 ```
 
-### source/app/components/MiComponente.jsx
+### app/components/MiComponente.jsx
 
-Luego crearemos el archivo **source/app/components/MiComponente.jsx** en el cual crearemos la clase `MiComponente` que extiende la clase `React.Component`, insertamos el contenido del componente pintando la propiedad `name` y finalmente exportamos la clase `MiComponente`.
+Luego crearemos el archivo **app/components/MiComponente.jsx** en el cual crearemos la clase `MiComponente` que extiende la clase `React.Component`, insertamos el contenido del componente pintando la propiedad `name` y finalmente exportamos la clase `MiComponente`.
 
 ```jsx
 import React from 'react';
@@ -39,9 +42,9 @@ class MiComponente extends React.Component {
 module.exports = MiComponente;
 ```
 
-### source/app/paso1.jsx
+### app/paso1.jsx
 
-Finalmente creamos el archivo: **source/app/paso1.jsx**, en donde importamos `react`, `react-dom` y nuestro componente `MiComponente`. Luego declaramos el nodo que contendrá nuestro componente y luego mediante `react-dom` renderizaremos nuestro componente  `MiComponente`, asignandole el valor de 'Jan Sanchez' a la propiedad **name** de nuestro componente `MiComponente`.
+Finalmente creamos el archivo: **app/paso1.jsx**, en donde importamos `react`, `react-dom` y nuestro componente `MiComponente`. Luego declaramos el nodo que contendrá nuestro componente y luego mediante `react-dom` renderizaremos nuestro componente  `MiComponente`, asignandole el valor de 'Jan Sanchez' a la propiedad **name** de nuestro componente `MiComponente`.
 
 ```jsx
 import React from 'react';
