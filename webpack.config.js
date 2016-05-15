@@ -24,7 +24,6 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
         loader: 'babel',
-        include: APP_PATH,
         query: {
           presets: ['es2015', 'react']
         }
@@ -32,10 +31,8 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true,
     inline: true,
-    progress: true,
-    noInfo: false,
+    port: 8080,
     contentBase: PUBLIC_PATH
   },
   plugins: [
