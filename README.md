@@ -35,7 +35,6 @@ Express es una infraestructura de aplicaciones web Node.js mínima y flexible qu
 ### JSX
 
 
-
 ### Webpack
 
 Webpack es un enpaquetador de módulos, toma módulos con dependencias y genera archivos estáticos correspondientes a dichos módulos.
