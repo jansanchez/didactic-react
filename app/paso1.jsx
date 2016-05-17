@@ -5,4 +5,14 @@ import MiComponente from './components/MiComponente.jsx';
 
 const nodoContenedor = document.getElementById('divPaso1');
 
-ReactDOM.render(<MiComponente name="Jan Sanchez" />, nodoContenedor);
+const renderizacion = () => {
+  ReactDOM.render(<MiComponente name="Jan Sanchez" />, nodoContenedor);
+}
+
+renderizacion();
+
+if (module.hot) {
+  module.hot.accept( () => {
+    renderizacion();
+  });
+}

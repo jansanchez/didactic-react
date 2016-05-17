@@ -51,6 +51,18 @@ The webpack-dev-server is a little node.js Express server, which uses the webpac
 Webpack-dev-servidor es un pequeño servidor express, que utiliza el webpack-dev-middleware para servir un paquete construido con webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, el cliente reacciona a esos eventos, Genial no?.
 
 
+### Instalación de dependencias
+
+```
+npm i -S react react-dom
+```
+
+### Instalación de dependencias de desarrollo
+
+```
+npm i -SD babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server
+```
+
 Antes del paso 1, se necesitan conceptos básicos:
 jsx. componente.
 
