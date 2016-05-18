@@ -2,7 +2,7 @@
 
 Repositorio donde realizaremos ejemplos básicos del uso de ReactJS.
 
-En este artículo realizaremos una demo básica con React JS, pero tratando de entender la mayoría de los conceptos que se utilizarán para hacer la demo. La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender Rect JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes.
+En este artículo realizaremos una demo básica con React JS, pero tratando de entender la mayoría de los conceptos que se utilizarán para hacer la demo. La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender React JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes, si desean también pueden comentar en twitter con el hastag `#TalleresWebReactJS`.
 
 Luego realizaremos una serie de artículos y demos, con lo cual iremos profundizando paso a paso en el uso de React JS y sus aplicaciones prácticas.
 
@@ -50,29 +50,6 @@ React JS está enteramente pensado para la construcción de componentes reutiliz
 
 React JS, es una librería Javascript, por favor no confundamos React JS con un framework (marco de trabajo).
 
-### ¿Qué es un componente en React JS?
-
-https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
-https://facebook.github.io/react/docs/glossary.html#react-elThanks.
-
-Express JS es una infraestructura de aplicaciones web Node.js mínima y flexible que proporciona un conjunto sólido de características para las aplicaciones web y móviles.
-
-When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.
-
-Cuando se diseñan interfaces, se acostumbra descomponer los elementos de diseño comunes (botones, campos de formulario, componentes de diseño, etc.) en componentes reutilizables con interfaces bien definidas. De esta forma, la próxima vez que los necesite para construir algo de la interfaz de usuario, se podrá escribir mucho menos código. Esto significa que se reducirá el tiempo desarrollo y habrá menos errores en esta operación.
-
-When your component is first initialized, the render method is called, generating a lightweight representation of your view. From that representation, a string of markup is produced, and injected into the document. When your data changes, the render method is called again. In order to perform updates as efficiently as possible, we diff the return value from the previous call to render with the new one, and generate a minimal set of changes to be applied to the DOM.
-
-Cuando el componente se inicializa en primer lugar, el método render se llama, lo que genera una representación de peso ligero de la vista. Desde que la representación, una cadena de marcado se produce, y se inyecta en el documento. Cuando los datos cambia, el método render se llama de nuevo. Con el fin de realizar las actualizaciones de forma más eficiente posible, nos Dif el valor de retorno de la llamada anterior para hacer que con el nuevo, y generar un conjunto mínimo de cambios que se aplicará a la DOM.
-
-### ¿Qué es Virtual DOM?
-https://github.com/Matt-Esch/virtual-dom
-
-### ¿Qué es React Element?
-https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
-
-xxxx
-
 ### ¿Qué es JSX?
 JSX es una extensión de la sintaxis de JavaScript, tiene una apariencia similar a XML, la cual es similar a nuestra famosa sintaxis HTML, por lo cual se nos hará rápidamente muy familiar.
 
@@ -84,6 +61,25 @@ JSX no altera la semántica JavaScript.
 
 Mi recomendación es usar JSX, debido a que su sintaxis le da un orden a nuestros componentes React JS.
 
+### ¿Qué es un componente en React JS?
+
+When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.
+
+Cuando se diseñan interfaces, se acostumbra descomponer los elementos de diseño comunes (botones, campos de formulario, componentes de diseño, etc.) en componentes reutilizables con interfaces bien definidas. De esta forma, la próxima vez que los necesite para construir algo de la interfaz de usuario, se podrá escribir mucho menos código. Esto significa que se reducirá el tiempo desarrollo y habrá menos errores en esta operación.
+
+When your component is first initialized, the render method is called, generating a lightweight representation of your view. From that representation, a string of markup is produced, and injected into the document. When your data changes, the render method is called again. In order to perform updates as efficiently as possible, we diff the return value from the previous call to render with the new one, and generate a minimal set of changes to be applied to the DOM.
+
+Cuando el componente se inicializa en primer lugar, el método render se llama, lo que genera una representación de peso ligero de la vista. Desde que la representación, una cadena de marcado se produce, y se inyecta en el documento. Cuando los datos cambia, el método render se llama de nuevo. Con el fin de realizar las actualizaciones de forma más eficiente posible, nos Dif el valor de retorno de la llamada anterior para hacer que con el nuevo, y generar un conjunto mínimo de cambios que se aplicará a la DOM.
+
+https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
+https://facebook.github.io/react/docs/glossary.html#react-elThanks.
+
+### ¿Qué es Virtual DOM?
+https://github.com/Matt-Esch/virtual-dom
+
+### ¿Qué es React Element?
+https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
+
 ### ¿Qué es Webpack?
 
 Webpack es un enpaquetador de módulos, toma módulos con dependencias y genera archivos estáticos correspondientes a dichos módulos.
@@ -92,15 +88,17 @@ Webpack recoge y procesa una variedad de recursos web y los embala en un paquete
 
 Debido a que React JS utiliza componentes como bloques de construcción para aplicaciones cada vez más grandes, además usaremos webpack porque le da superpoderes a los require e imports de node.js.
 
-
 ### ¿Qué es webpack-dev-server?
 
 The webpack-dev-server is a little node.js Express server, which uses the webpack-dev-middleware to serve a webpack bundle. It also has a little runtime which is connected to the server via Socket.IO. The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs.
 
 Webpack-dev-servidor es un pequeño servidor express, que utiliza el webpack-dev-middleware para servir un paquete construido con webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, el cliente reacciona a esos eventos, Genial no?.
 
-
 ### Instalación de dependencias
+
+```
+npm init
+```
 
 ```
 npm i -S react react-dom
@@ -153,10 +151,12 @@ import React from 'react';
 
 class MiComponente extends React.Component {
     render() {
-        return <div>
-                    Hola, soy <b>{this.props.name}</b> de <i>Frontend Labs </i>
-                    y juntos vamos a aprender React JS!
-                </div>;
+      return (
+        <div>
+          Hola, soy <b>{this.props.name}</b> de <i>Frontend Labs </i>
+          y juntos vamos a aprender React JS!
+        </div>
+      );
     }
 }
 
@@ -177,9 +177,10 @@ import ReactDOM from 'react-dom';
 import MiComponente from './components/MiComponente.jsx';
 
 const nodoContenedor = document.getElementById('divPaso1');
+const miComponente = <MiComponente name="Jan Sanchez" />;
 
 const renderizacion = () => {
-  ReactDOM.render(<MiComponente name="Jan Sanchez" />, nodoContenedor);
+  ReactDOM.render(miComponente, nodoContenedor);
 }
 
 renderizacion();
@@ -196,8 +197,7 @@ Dentro del componente el valor de la propiedad **name** puede ser capturado medi
 
 El archivo: **app/paso1.jsx**,  será el punto de inicio de nuestra aplicación de ejemplo, pero como sabemos el navegador no reconocerá la extensión **.jsx**, ni la versión ES2015 de Javascript, por lo cual necesitamos convertirlo en un archivo **.js** basado en ES5, para eso utilizaremos webpack y babel.
 
-
-
 https://babeljs.io/docs/learn-es2015/
 https://github.com/thejameskyle/babel-handbook/blob/master/translations/es-ES/user-handbook.md#toc-introduction
 https://facebook.github.io/react/docs/jsx-in-depth.html
+https://github.com/airbnb/javascript/tree/master/react
