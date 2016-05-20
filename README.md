@@ -6,35 +6,30 @@ En este artículo realizaremos una demo básica con React JS, pero tratando de e
 
 Luego realizaremos una serie de artículos y demos, con lo cual iremos profundizando paso a paso en el uso de React JS y sus aplicaciones prácticas.
 
-Para llevar esto a cabo tendremos que instalar otras dependencias de desarrollo y tener algunos conocimientos básicos antes de empezar, así que vamos a ver algunos conceptos:
+Para llevar esto a cabo tendremos que instalar otras dependencias de desarrollo y tener algunos conocimientos básicos antes de empezar, así que no esperemos más y vamos por esos conceptos:
 
-## Conceptos básicos
-
-En esta demo usaremos algunos de los siguientes conceptos:
+## Conceptos básicos antes de comenzar con React JS
 
 ### ¿Qué es ECMAScript 2015 (ES2015)?
+ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual fue estandarizada por el año 2009, es decir **hace más de 7 años**.
 
-ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual se estandarizó en el año 2009.
-
-Las características de ES2015 están siendo implementadas en la mayoría de navegadores actuales y en Node.JS, por lo que usaremos esta versión para codear esta y las demás demos con React JS. Otra fuerte razón es que el estándar ES5 fue publicado hace más de 7 años, lo cual lo hace algo anticuado.
+Las características de ES2015 están siendo implementadas en Node.JS y poco a poco [en la mayoría de navegadores actuales](http://kangax.github.io/compat-table/es6/), debido a esto usaremos ES2015 para codear todas las demos con React JS.
 
 ### ¿Qué es Babel JS?
 
-Babel es un compilador multipropósito para Javascript. Usando Babel podemos codear en la nueva versión del estándar ECMAScript hoy mismo, sí, hoy mismo. ¿No es una gran noticia?.
+Babel es un compilador multipropósito para Javascript. Usando Babel podemos codear en la nueva versión del estándar ECMAScript hoy mismo, sí, hoy mismo!. ¿No es una gran noticia?.
 
-Javascript es un lenguaje en constante evolución, con nuevas especificaciones, propuestas en camino y nuevas funcionalidades todo el tiempo. Babel nos permitirá usar muchas de estas características años antes de que estén disponibles en todos lados.
+Javascript es un lenguaje en constante evolución, con nuevas propuestas, especificaciones y nuevas funcionalidades todo el tiempo. Babel nos permitirá usar muchas de estas características antes de que estén disponibles en todos lados.
 
-Lo que hace Babel es tomar el código Javascript escrito con los últimos estándares y compilarlo a su versión en ES5. Este proceso es llamado **compilación source-to-source**, y mayormente conocido como transpiling.
-
-De esta forma, el día de hoy podemos trabajar escribiendo código Javascript en ES2015 y mediante Babel JS podemos obtener todas el funcionamiento y las características de ese código convertido a ES5, ¿No les parece Genial?.
+Lo que hace Babel es tomar el código Javascript escrito con los últimos estándares y compilarlo a su versión en ES5. Este proceso es llamado **compilación source-to-source**, mayormente conocido como transpiling.
 
 ### ¿Qué es Node.JS?
 
-Node.js es un entorno de ejecución multiplataforma para el desarrollo de aplicaciones web a nivel de servidor. Si un módulo no existe en la biblioteca nativa de Node.JS, se puede crear y publicar por cualquier persona común y corriente gracias a que pueden escribir nuevos módulos independientes en Javascript.
+Node.js es un entorno de ejecución multiplataforma para el desarrollo de aplicaciones web a nivel de servidor. Si un módulo o paquete no existe en la biblioteca nativa de Node.JS, entonces se puede crear y publicar por cualquier persona común y corriente, gracias a que se pueden escribir nuevos módulos y/o paquetes independientes para Node.JS, sólo necesitas saber un poco de Javascript para poder hacerlo.
 
 El entorno de ejecución interpreta Javascript usando el motor V8 de JavaScript de Google.
 
-Para el desarrollo de estos demos básicos usaremos módulos hechos en node.js, así que debemos conocer algo de Node.js.
+Para el desarrollo de estos demos básicos usaremos paquetes hechos en Node.JS, por lo cual debemos conocer algo de Node.js.
 
 ### ¿Qué es Express JS?
 
@@ -46,14 +41,16 @@ Según sus autores React JS fue construido con un objetivo principal: *Que la co
 
 React JS gestionará automáticamente las actualizaciones de la interfaz de usuario (UI) cuando detecte cambios en los datos ocultos que tendrá cada componente de la vista. Cuando los datos cambian, React JS actualiza únicamente las partes que han cambiado, es casi mágico y muy bueno para el performance de la aplicación, no necesita mapear ni hacer cambios en todo el DOM innecesariamente.
 
-React JS está enteramente pensado para la construcción de componentes reutilizables. De hecho, con React JS prácticamente lo único que se hace es construir y gestionar componentes. Ya que están tan encapsulados, los componentes hacen que la reutilización de código, prueba y separación de las preocupaciones sea una tarea más fácil.
+React JS está enteramente pensado para la construcción de componentes reutilizables. De hecho, con React JS prácticamente lo único que se hace es construir y gestionar componentes.
 
-React JS, es una librería Javascript, por favor no confundamos React JS con un framework (marco de trabajo).
+Debido a que los componentes en React JS están tan encapsulados, hacen que la reutilización de código, prueba y separación de las responsabilidades sea una tarea más fácil.
+
+React JS, *es una librería Javascript*, por favor no confundamos React JS con un framework (marco de trabajo).
 
 ### ¿Qué es JSX?
 JSX es una extensión de la sintaxis de JavaScript, tiene una apariencia similar a XML, la cual es similar a nuestra famosa sintaxis HTML, por lo cual se nos hará rápidamente muy familiar.
 
-No es necesario utilizar JSX con React. También se puede utilizar Javascript puro para realizar esta tarea. Sin embargo, se recomienda utilizar JSX porque es una sintaxis concisa y familiar para la definición de estructuras de árbol y sus atributos.
+No es estrictamente necesario utilizar JSX con React. También se puede utilizar Javascript puro para realizar esta tarea. Sin embargo, se recomienda utilizar JSX porque es una sintaxis concisa y familiar para la definición de estructuras de árbol y sus atributos.
 
 XML tiene el beneficio de las etiquetas de apertura y cierre. Esto hace que las estructuras de árboles grandes sean más fáciles de leer que las funciones o objetos literales Javascript.
 
@@ -81,20 +78,31 @@ https://github.com/Matt-Esch/virtual-dom
 https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
 
 ### ¿Qué es Webpack?
-
-Webpack es un enpaquetador de módulos, toma módulos con dependencias y genera archivos estáticos correspondientes a dichos módulos.
+Webpack es un enpaquetador de módulos, toma módulos que por lo general tienen dependencias y genera archivos estáticos correspondientes a dichos módulos.
 
 Webpack recoge y procesa una variedad de recursos web y los embala en un paquete que se puede servir de lado cliente. A pesar de que esto suena simple, en realidad es un problema difícil que se vuelve más complejo cuando una aplicación web crece.
 
-Debido a que React JS utiliza componentes como bloques de construcción para aplicaciones cada vez más grandes, además usaremos webpack porque le da superpoderes a los require e imports de node.js.
+Debido a que React JS utiliza componentes como si fuesen bloques de construcción para aplicaciones cada vez más grandes y Webpack trabaja muy bien con ese concepto, lo usaremos en nuestras demos, además Webpack le da superpoderes a los *require* e *import*s de Node.JS, esto lo vuelve mucho más genial.
 
 ### ¿Qué es webpack-dev-server?
+Webpack-dev-servidor es un pequeño servidor express, que utiliza *webpack-dev-middleware* para servir un paquete construído con Webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, y el cliente reacciona a esos eventos.
 
-The webpack-dev-server is a little node.js Express server, which uses the webpack-dev-middleware to serve a webpack bundle. It also has a little runtime which is connected to the server via Socket.IO. The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs.
+Hay varios modos de cómo trabajar con webpack-dev-server, para nuestro caso usaremos estos eventos para recargar sólo los componentes que se hayan actualizado, de esa forma podremos agilizar más nuestro desarrollo.
 
-Webpack-dev-servidor es un pequeño servidor express, que utiliza el webpack-dev-middleware para servir un paquete construido con webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, el cliente reacciona a esos eventos, Genial no?.
+Conociendo estos conceptos básicos ya podemos comenzar a hacer nuestra demo, así que pongamos manos a la obra!.
+
+
+### Pre-requisitos
+
+Antes de comenzar necesitamos tener instalado en nuestra computadora: Node.JS en su versión 4.4.4 como mínimo, recordandoles que a fin de año se le [quitará el soporte a la versión 0.12 ](https://github.com/nodejs/LTS#lts_schedule).
+
+Si deseas tener instalada la versión 4.3.0 o una versión mayor sólo para estás demos, no te preocupes para eso existe un gran paquete Node.JS llamado n, el cual soluciona esta situación de una manera genial, que te explicamos en [nuestro artículo sobre n](http://frontendlabs.io/3397--node-js-como-trabajar-multiples-versiones-de-node-version-manager).
+
+Resuelto esto ahora si pasamos a crear el proyecto desde cero e instalar las dependencias y dependencias de desarrollo que necesitaremos.
 
 ### Instalación de dependencias
+
+Primero necesitamos
 
 ```
 npm init
