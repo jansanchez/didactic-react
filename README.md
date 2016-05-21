@@ -2,7 +2,7 @@
 
 Repositorio donde realizaremos ejemplos básicos del uso de ReactJS.
 
-En este artículo realizaremos una demo básica con React JS, pero tratando de entender la mayoría de los conceptos que se utilizarán para hacer la demo. La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender React JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes, si desean también pueden comentar en twitter con el hastag `#TalleresWebReactJS`.
+En este artículo realizaremos una demo básica con React JS, pero tratando de entender la mayoría de los conceptos que se utilizarán para hacer la demo. La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender React JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes, si desean también pueden comentar en twitter con el hastag [#TalleresWebReactJS](https://twitter.com/hashtag/TalleresWebReactJS).
 
 Luego realizaremos una serie de artículos y demos, con lo cual iremos profundizando paso a paso en el uso de React JS y sus aplicaciones prácticas.
 
@@ -88,6 +88,10 @@ Debido a que React JS utiliza componentes como si fuesen bloques de construcció
 Webpack-dev-servidor es un pequeño servidor express, que utiliza *webpack-dev-middleware* para servir un paquete construído con Webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, y el cliente reacciona a esos eventos.
 
 Hay varios modos de cómo trabajar con webpack-dev-server, para nuestro caso usaremos estos eventos para recargar sólo los componentes que se hayan actualizado, de esa forma podremos agilizar más nuestro desarrollo.
+
+### ¿Qué es un loader?
+
+
 
 Conociendo estos conceptos básicos ya podemos comenzar a hacer nuestra demo, así que pongamos manos a la obra!.
 

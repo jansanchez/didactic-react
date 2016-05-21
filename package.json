@@ -29,5 +29,6 @@
   "xo": {
     "esnext": true,
     "rules": {}
-  }
+  },
+  "babel": {}
 }

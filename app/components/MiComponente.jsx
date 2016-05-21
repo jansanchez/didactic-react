@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-class MiComponente extends React.Component {
+export default class MiComponente extends React.Component {
     render() {
       return (
         <div>
@@ -11,5 +11,3 @@ class MiComponente extends React.Component {
       );
     }
 }
-
-module.exports = MiComponente;
