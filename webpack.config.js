@@ -8,7 +8,7 @@ var BUILD_PATH = path.join(ROOT_PATH, '/public/static/js/');
 
 module.exports = {
   entry: {
-    paso1: ['webpack/hot/dev-server', './app/paso1.jsx']
+    paso1: ['webpack/hot/dev-server', './app/paso1']
   },
   output: {
     path: BUILD_PATH,
@@ -22,7 +22,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'babel',
         query: {
           presets: ['es2015', 'react']

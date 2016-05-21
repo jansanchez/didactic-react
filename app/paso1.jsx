@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MiComponente from './components/MiComponente.jsx';
+import MiComponente from './components/MiComponente';
 
 const nodoContenedor = document.getElementById('divPaso1');
 const miComponente = <MiComponente name="Jan Sanchez" />;
