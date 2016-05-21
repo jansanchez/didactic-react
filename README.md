@@ -1,21 +1,64 @@
-# didactic-react
+# Didactic-react
 
-Repositorio donde realizaremos ejemplos básicos del uso de ReactJS.
+En este artículo realizaremos una demo básica con React JS, y trataremos de explicar a detalle cada paso, para así poder entender la mayoría de conceptos que giran en torno al desarrollo de una Aplicación con React JS.
 
-En este artículo realizaremos una demo básica con React JS, pero tratando de entender la mayoría de los conceptos que se utilizarán para hacer la demo. La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender React JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes, si desean también pueden comentar en twitter con el hastag [#TalleresWebReactJS](https://twitter.com/hashtag/TalleresWebReactJS).
+Para esta demo básica usaremos 3 conceptos principales, los cuales son:
 
-Luego realizaremos una serie de artículos y demos, con lo cual iremos profundizando paso a paso en el uso de React JS y sus aplicaciones prácticas.
+- React JS
+- Webpack
+- Babel JS
 
-Para llevar esto a cabo tendremos que instalar otras dependencias de desarrollo y tener algunos conocimientos básicos antes de empezar, así que no esperemos más y vamos por esos conceptos:
+## ¿Qué es React JS?
 
-## Conceptos básicos antes de comenzar con React JS
+Según sus autores React JS fue construido con un objetivo principal: **Que la construcción y mantenimiento de grandes aplicaciones con datos que cambian con el tiempo, sea lo más sencilla posible**.
 
-### ¿Qué es ECMAScript 2015 (ES2015)?
-ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual fue estandarizada por el año 2009, es decir **hace más de 7 años**.
+React JS, *es una librería Javascript*, cuyo enfoque principal se centra en la gestión de interfaces de usuario (vistas). React JS gestionará automáticamente las actualizaciones de la interfaz de usuario cuando detecte cambios en los datos internos que tendrá cada componente de la vista. Cuando los datos cambian, **React JS actualiza únicamente las partes que han cambiado**, es casi mágico y muy bueno para el performance de la aplicación, no necesita mapear, ni hacer cambios en todo el DOM innecesariamente.
 
-Las características de ES2015 están siendo implementadas en Node.JS y poco a poco [en la mayoría de navegadores actuales](http://kangax.github.io/compat-table/es6/), debido a esto usaremos ES2015 para codear todas las demos con React JS.
+Por favor no confundamos React JS con un framework.
 
-### ¿Qué es Babel JS?
+### ¿Qué es un componente en React JS?
+
+Cuando se diseñan interfaces, se acostumbra descomponer los elementos de diseño comunes (secciones, botones, campos de formulario, etc.) en componentes reutilizables con interfaces bien definidas. React JS utiliza este concepto teórico para sus componentes, por lo cual un componente puede ser cualquier elemento de nuestra interfaz de usuario.
+
+React JS está enteramente pensado para la construcción de **componentes reutilizables**. De hecho, con React JS prácticamente lo único que se hace es construir y gestionar componentes.
+
+Debido a que los componentes en React JS están tan encapsulados, hacen que la reutilización de código, pruebas y separación de las responsabilidades sea una tarea más fácil.
+
+El requisito principal es que un componente React JS debe sobreescribir el metodo render(), ya que cuando el componente se inicializa el método render se llama automaticamente, y este genera una representación lógica de la vista. Desde esa representación lógica React JS puede formar una cadena de marcado (markup), e inyectarla en el DOM.
+
+Cuando los datos cambian, el método render se llama de nuevo, React JS compara el valor devuelto anteriormente con el nuevo, de esa comparación obtiene un conjunto mínimo de cambios que se aplicarán en el DOM, obviamente esta actualización es mucho más eficiente.
+
+Los componentes son el corazón de React JS, en estas demos nos la pasaremos creando, administrando y conociendo en profundidad los componentes en React JS.
+
+### ¿Qué es JSX?
+JSX es una extensión de la sintaxis de JavaScript, tiene una apariencia similar a XML, la cual es similar a nuestra muy conocida sintaxis HTML, por lo cual se nos hará rápidamente muy familiar.
+
+XML tiene el beneficio de las etiquetas de apertura y cierre. Esto hace que las estructuras de árboles grandes sean más fáciles de leer que las funciones o objetos literales Javascript.
+
+No es estrictamente necesario utilizar JSX con React. También se puede utilizar Javascript puro para realizar esta tarea. Sin embargo, se recomienda utilizar JSX porque es una sintaxis concisa y familiar para la definición de estructuras de árbol y sus atributos.
+
+> Ya que en nuestras demos utilizaremos **.jsx**, les recomiendo instalar el plugin o paquete para que su respectivo editor de texto reconozca esta sintaxis.
+
+De momento para esta demo básica eso es todo lo que necesitamos saber sobre React JS, en los proximos artículos iremos profundizando más y más en los conceptos de React JS.
+
+## ¿Qué es Webpack?
+Webpack es un enpaquetador de módulos, toma módulos que por lo general tienen dependencias y genera archivos estáticos correspondientes a dichos módulos.
+
+Webpack recoge y procesa una variedad de recursos web y los embala en un paquete que se puede servir de lado cliente. A pesar de que esto suena simple, en realidad es un problema difícil que se vuelve más complejo cuando una aplicación web crece.
+
+Debido a que React JS utiliza componentes como si fuesen bloques de construcción para aplicaciones cada vez más grandes y Webpack trabaja muy bien con ese concepto, lo usaremos en nuestras demos, además Webpack le da superpoderes a los **require** e **import**s de Node.JS, esto lo vuelve mucho más genial.
+
+Además de Webpack también podríamos usar [Browserify](http://browserify.org/), [jspm](http://jspm.io/) u otras herramientas para realizar el trabajo con React JS, pero para estos talleres escogí Webpack ya que me gustó mucho trabajar con su **dev-server**, veamos de que trata en el siguiente concepto.
+
+### ¿Qué es webpack-dev-server?
+Webpack-dev-server es un pequeño servidor express, que utiliza *webpack-dev-middleware* para servir un paquete construído con Webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, y el cliente reacciona a esos eventos.
+
+Hay varios modos de cómo trabajar con webpack-dev-server, pero para nuestro caso usaremos estos eventos para recargar sólo los componentes que se hayan actualizado, de esa forma podremos agilizar más nuestro desarrollo.
+
+### ¿Qué es un loader?
+aaaaaaaaaaa
+
+## ¿Qué es Babel JS?
 
 Babel es un compilador multipropósito para Javascript. Usando Babel podemos codear en la nueva versión del estándar ECMAScript hoy mismo, sí, hoy mismo!. ¿No es una gran noticia?.
 
@@ -23,9 +66,14 @@ Javascript es un lenguaje en constante evolución, con nuevas propuestas, especi
 
 Lo que hace Babel es tomar el código Javascript escrito con los últimos estándares y compilarlo a su versión en ES5. Este proceso es llamado **compilación source-to-source**, mayormente conocido como transpiling.
 
-### ¿Qué es Node.JS?
+### ¿Qué es ECMAScript 2015 (ES2015)?
+ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual fue estandarizada por el año 2009, es decir **hace más de 7 años**.
 
-Node.js es un entorno de ejecución multiplataforma para el desarrollo de aplicaciones web a nivel de servidor. Si un módulo o paquete no existe en la biblioteca nativa de Node.JS, entonces se puede crear y publicar por cualquier persona común y corriente, gracias a que se pueden escribir nuevos módulos y/o paquetes independientes para Node.JS, sólo necesitas saber un poco de Javascript para poder hacerlo.
+Las características de ES2015 están siendo implementadas en Node.JS y poco a poco [en la mayoría de navegadores actuales](http://kangax.github.io/compat-table/es6/), debido a esto usaremos ES2015 para codear todas las demos con React JS.
+
+
+### ¿Qué es Node.JS?
+Node.js es un entorno de ejecución multiplataforma para el desarrollo de aplicaciones web a nivel de servidor. Si un módulo o paquete no existe en la bibli0oteca nativa de Node.JS, entonces se puede crear y publicar por cualquier persona común y corriente, gracias a que se pueden escribir nuevos módulos y/o paquetes independientes par0a Node.JS, sólo necesitas saber un poco de Javascript para poder hacerlo.
 
 El entorno de ejecución interpreta Javascript usando el motor V8 de JavaScript de Google.
 
@@ -35,61 +83,7 @@ Para el desarrollo de estos demos básicos usaremos paquetes hechos en Node.JS, 
 
 Express JS es una infraestructura de aplicaciones web Node.js mínima y flexible que proporciona un conjunto sólido de características para las aplicaciones web y móviles.
 
-### ¿Qué es React JS?
 
-Según sus autores React JS fue construido con un objetivo principal: *Que la construcción y mantenimiento de grandes aplicaciones con datos que cambian con el tiempo, sea lo más sencilla posible*.
-
-React JS gestionará automáticamente las actualizaciones de la interfaz de usuario (UI) cuando detecte cambios en los datos ocultos que tendrá cada componente de la vista. Cuando los datos cambian, React JS actualiza únicamente las partes que han cambiado, es casi mágico y muy bueno para el performance de la aplicación, no necesita mapear ni hacer cambios en todo el DOM innecesariamente.
-
-React JS está enteramente pensado para la construcción de componentes reutilizables. De hecho, con React JS prácticamente lo único que se hace es construir y gestionar componentes.
-
-Debido a que los componentes en React JS están tan encapsulados, hacen que la reutilización de código, prueba y separación de las responsabilidades sea una tarea más fácil.
-
-React JS, *es una librería Javascript*, por favor no confundamos React JS con un framework (marco de trabajo).
-
-### ¿Qué es JSX?
-JSX es una extensión de la sintaxis de JavaScript, tiene una apariencia similar a XML, la cual es similar a nuestra famosa sintaxis HTML, por lo cual se nos hará rápidamente muy familiar.
-
-No es estrictamente necesario utilizar JSX con React. También se puede utilizar Javascript puro para realizar esta tarea. Sin embargo, se recomienda utilizar JSX porque es una sintaxis concisa y familiar para la definición de estructuras de árbol y sus atributos.
-
-XML tiene el beneficio de las etiquetas de apertura y cierre. Esto hace que las estructuras de árboles grandes sean más fáciles de leer que las funciones o objetos literales Javascript.
-
-JSX no altera la semántica JavaScript.
-
-Mi recomendación es usar JSX, debido a que su sintaxis le da un orden a nuestros componentes React JS.
-
-### ¿Qué es un componente en React JS?
-
-When designing interfaces, break down the common design elements (buttons, form fields, layout components, etc.) into reusable components with well-defined interfaces. That way, the next time you need to build some UI, you can write much less code. This means faster development time, fewer bugs, and fewer bytes down the wire.
-
-Cuando se diseñan interfaces, se acostumbra descomponer los elementos de diseño comunes (botones, campos de formulario, componentes de diseño, etc.) en componentes reutilizables con interfaces bien definidas. De esta forma, la próxima vez que los necesite para construir algo de la interfaz de usuario, se podrá escribir mucho menos código. Esto significa que se reducirá el tiempo desarrollo y habrá menos errores en esta operación.
-
-When your component is first initialized, the render method is called, generating a lightweight representation of your view. From that representation, a string of markup is produced, and injected into the document. When your data changes, the render method is called again. In order to perform updates as efficiently as possible, we diff the return value from the previous call to render with the new one, and generate a minimal set of changes to be applied to the DOM.
-
-Cuando el componente se inicializa en primer lugar, el método render se llama, lo que genera una representación de peso ligero de la vista. Desde que la representación, una cadena de marcado se produce, y se inyecta en el documento. Cuando los datos cambia, el método render se llama de nuevo. Con el fin de realizar las actualizaciones de forma más eficiente posible, nos Dif el valor de retorno de la llamada anterior para hacer que con el nuevo, y generar un conjunto mínimo de cambios que se aplicará a la DOM.
-
-https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
-https://facebook.github.io/react/docs/glossary.html#react-elThanks.
-
-### ¿Qué es Virtual DOM?
-https://github.com/Matt-Esch/virtual-dom
-
-### ¿Qué es React Element?
-https://quickleft.com/blog/understanding-the-difference-between-react-elements-and-components/
-
-### ¿Qué es Webpack?
-Webpack es un enpaquetador de módulos, toma módulos que por lo general tienen dependencias y genera archivos estáticos correspondientes a dichos módulos.
-
-Webpack recoge y procesa una variedad de recursos web y los embala en un paquete que se puede servir de lado cliente. A pesar de que esto suena simple, en realidad es un problema difícil que se vuelve más complejo cuando una aplicación web crece.
-
-Debido a que React JS utiliza componentes como si fuesen bloques de construcción para aplicaciones cada vez más grandes y Webpack trabaja muy bien con ese concepto, lo usaremos en nuestras demos, además Webpack le da superpoderes a los *require* e *import*s de Node.JS, esto lo vuelve mucho más genial.
-
-### ¿Qué es webpack-dev-server?
-Webpack-dev-servidor es un pequeño servidor express, que utiliza *webpack-dev-middleware* para servir un paquete construído con Webpack. El servidor emite información sobre el estado de compilación hacia el cliente mediante Socket.IO, y el cliente reacciona a esos eventos.
-
-Hay varios modos de cómo trabajar con webpack-dev-server, para nuestro caso usaremos estos eventos para recargar sólo los componentes que se hayan actualizado, de esa forma podremos agilizar más nuestro desarrollo.
-
-### ¿Qué es un loader?
 
 
 
@@ -209,7 +203,12 @@ Dentro del componente el valor de la propiedad **name** puede ser capturado medi
 
 El archivo: **app/paso1.jsx**,  será el punto de inicio de nuestra aplicación de ejemplo, pero como sabemos el navegador no reconocerá la extensión **.jsx**, ni la versión ES2015 de Javascript, por lo cual necesitamos convertirlo en un archivo **.js** basado en ES5, para eso utilizaremos webpack y babel.
 
+
 https://babeljs.io/docs/learn-es2015/
 https://github.com/thejameskyle/babel-handbook/blob/master/translations/es-ES/user-handbook.md#toc-introduction
 https://facebook.github.io/react/docs/jsx-in-depth.html
 https://github.com/airbnb/javascript/tree/master/react
+
+
+
+La idea principal es formar una comunidad Online de React JS en español, y que ustedes participen comentando mejoras, dudas o partes que no les queden claras para poder ir fortaleciendo el artículo y las demos básicas, de esta forma podremos formar entre todos un artículo contundente, que nos ayude a todos a entender React JS de la mejor forma, esto quiere decir que este artículo irá cambiando y mejorando en base a sus aportes, si desean también pueden comentar en twitter con el hastag [#TalleresWebReactJS](https://twitter.com/hashtag/TalleresWebReactJS).

@@ -4,7 +4,7 @@
   "description": "didactic-react",
   "main": "server.js",
   "scripts": {
-    "server": "webpack-dev-server --devtool eval --progress --inline --colors --hot --content-base ./public/",
+    "server": "webpack-dev-server --inline --hot --content-base ./public/",
     "build": "webpack -w -p",
     "lint": "xo ./server.js ./app/**/*.jsx"
   },
