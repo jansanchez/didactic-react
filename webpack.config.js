@@ -4,7 +4,7 @@ var BUILD_PATH = path.join(ROOT_PATH, '/public/static/js/');
 
 module.exports = {
   entry: {
-    paso1: ['webpack/hot/dev-server', './app/paso1']
+    tallerReact1: ['webpack/hot/dev-server', './app/TallerReact1']
   },
   output: {
     path: BUILD_PATH,

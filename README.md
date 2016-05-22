@@ -133,71 +133,78 @@ npm i -SD babel-loader babel-preset-es2015 babel-preset-react
 Y listo!!! con eso hemos instalado todas las dependencias para comenzar a trabajar con React JS.
 
 ## Taller React JS 1
-Para realizar el ejemplo más básico del uso de ReactJS escribiremos los siguientes archivos:
+
+Inicialmente para realizar esta demo escribiremos los siguientes archivos:
 
 - public/index.html
-- app/paso1.jsx
-- app/components/MiComponente.jsx
+- app/TallerReact1.jsx
+- app/components/Header.jsx
 
 ### public/index.html
 
-En el archivo **index.html** escribiremos un nuevo documento html, en el cual agregaremos un div con el id:  `divPaso1` y además agregaremos la llamada al `script`: **paso1.js**.
+En el archivo **index.html** escribiremos un nuevo documento html muy simple, en el cual agregaremos un div con el id:  `divTallerReact1`, dentro de este div es donde React JS renderizará nuestra Aplicación.
+Además agregaremos la llamada al `script`: **TallerReact1.js**, en este archivo estará todo el código necesario para la ejecución de nuestra Aplicación.
+
+Nuestro archivo **index.html** debe quedar así:
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>paso1</title>
+    <title>tallerReact1</title>
   </head>
   <body>
-    <div id="divPaso1"></div>
-    <script type="text/javascript" src="paso1.js"></script>
+      <div id="divTallerReact1"></div>
+    <script type="text/javascript" src="tallerReact1.js"></script>
   </body>
 </html>
 ```
 
-### app/components/MiComponente.jsx
+### app/components/Header.jsx
 
-Crearemos el archivo **app/components/MiComponente.jsx** en el cual declararemos la clase `MiComponente`, que hereda todo lo que ofrece la clase `React.Component`, mediante la palabra clave `extends`.
+Luego crearemos el archivo **app/components/Header.jsx** en el cual declararemos la clase `Header`, que como podemos observar hereda todo lo que ofrece la clase `React.Component`, mediante la palabra clave `extends`.
 
-Luego sobreescribiremos el método `render()`, insertando el contenido de nuestro componente. Para este ejemplo de componente retornaremos un `div` con un texto cualquiera, dentro del cual escribiremos `{this.props.name}` para mostrar el valor de la propiedad `name` de nuestro componente. Finalmente exportamos nuestro componente mediante `module.exports`.
+Luego sobreescribiremos el método `render()`, insertando el contenido de nuestro componente. Para este ejemplo de componente retornaremos un `div` conteniendo una etiqueta `<h1>`, dentro del cual escribiremos `{this.props.title}` para mostrar el valor de la propiedad `title` de nuestro componente. Finalmente exportamos nuestro componente `Header` mediante `export default class Header`.
 
-De esta manera nuestro nuevo componente `MiComponente` podrá ser utilizado/llamado de forma independiente por cualquier otro componente o aplicación.
+De esta manera nuestro nuevo componente `Header` podrá ser utilizado/llamado de forma independiente por cualquier otro componente o aplicación.
+
+Nuestro archivo **Header.html** debe quedar así:
 
 ```jsx
 import React from 'react';
 
-export default class MiComponente extends React.Component {
+export default class Header extends React.Component {
     render() {
       return (
         <div>
-          Hola, soy <b>{this.props.name}</b> de <i>Frontend Labs </i>
-          y juntos vamos a aprender React JS!
+          <h1>{this.props.title}</h1>
         </div>
       );
     }
 }
 ```
 
-### app/paso1.jsx
+### app/TallerReact1.jsx
 
-Creamos el archivo: **app/paso1.jsx**, en donde importamos `react`, `react-dom` y nuestro componente anteriormente creado `MiComponente`.
+Creamos el archivo: **app/TallerReact1.jsx**, en donde importamos `react`, `react-dom` y nuestro componente anteriormente creado `Header`.
 
-Luego definimos la constante `nodoContenedor` que será el nodo html que contendrá nuestro componente, que para este caso es un div con el id: `divPaso1`.
+Luego definimos la constante `nodoContenedor` que será el nodo html que contendrá nuestro componente, que para este caso es un div con el id: `divTallerReact1`.
 
-Finalmente mediante `react-dom` renderizaremos nuestro componente  `MiComponente`, asignando a la propiedad **name** el valor: *'Jan Sanchez'*.
+Finalmente mediante `react-dom` renderizaremos nuestro componente  `Header`, asignando a la propiedad **name** el valor: *'Taller Web React JS'*.
 
 ```jsx
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MiComponente from './components/MiComponente.jsx';
 
-const nodoContenedor = document.getElementById('divPaso1');
-const miComponente = <MiComponente name="Jan Sanchez" />;
+import Header from './components/Header';
+
+const header = <Header title="Taller Web React JS" />;
+const nodoContenedor = document.getElementById('divTallerReact1');
 
 const renderizacion = () => {
-  ReactDOM.render(miComponente, nodoContenedor);
+  ReactDOM.render(header, nodoContenedor);
 }
 
 renderizacion();
@@ -207,12 +214,13 @@ if (module.hot) {
     renderizacion();
   });
 }
+
 ```
 
 > **Nota:**
-Dentro del componente el valor de la propiedad **name** puede ser capturado mediante la siguiente instrucción: `{this.prop.name}`.
+Dentro del componente el valor de la propiedad **title** puede ser capturado mediante la siguiente instrucción: `{this.prop.title}`.
 
-El archivo: **app/paso1.jsx**,  será el punto de inicio de nuestra aplicación de ejemplo, pero como sabemos el navegador no reconocerá la extensión **.jsx**, ni la versión ES2015 de Javascript, por lo cual necesitamos convertirlo en un archivo **.js** basado en ES5, para eso utilizaremos webpack y babel.
+El archivo: **app/TallerReact1.jsx**,  será el punto de inicio de nuestra aplicación de ejemplo, pero como sabemos el navegador no reconocerá la extensión **.jsx**, ni la versión ES2015 de Javascript, por lo cual necesitamos convertirlo en un archivo **.js** basado en ES5, para eso utilizaremos webpack y babel.
 
 
 https://babeljs.io/docs/learn-es2015/
