@@ -130,7 +130,7 @@ npm i -SD babel-loader babel-preset-es2015 babel-preset-react
 
 >Mediante la instrucción `npm i -SD` podemos instalar las dependencias de desarrollo de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `devDependencies` y allí se almacenen las dependencias de desarrollo de nuestro proyecto.
 
-Y listo!!! con eso hemos instalado todas las dependencias para comenzar a trabajar con React JS.
+**Listo!!!*** con esto hemos instalado todas las dependencias de nuestro proyecto.
 
 ## Taller React JS 1
 
@@ -143,9 +143,9 @@ Inicialmente para realizar esta demo escribiremos los siguientes archivos:
 ### public/index.html
 
 En el archivo **index.html** escribiremos un nuevo documento html muy simple, en el cual agregaremos un div con el id:  `divTallerReact1`, dentro de este div es donde React JS renderizará nuestra Aplicación.
-Además agregaremos la llamada al `script`: **TallerReact1.js**, en este archivo estará todo el código necesario para la ejecución de nuestra Aplicación.
+Además agregaremos la llamada al `script`: **tallerReact1.js**, en este archivo estará todo el código necesario para la ejecución de nuestra Aplicación.
 
-Nuestro archivo **index.html** debe quedar así:
+Nuestro archivo **index.html** debería quedar así:
 
 ```html
 <!DOCTYPE html>
@@ -167,9 +167,9 @@ Luego crearemos el archivo **app/components/Header.jsx** en el cual declararemos
 
 Luego sobreescribiremos el método `render()`, insertando el contenido de nuestro componente. Para este ejemplo de componente retornaremos un `div` conteniendo una etiqueta `<h1>`, dentro del cual escribiremos `{this.props.title}` para mostrar el valor de la propiedad `title` de nuestro componente. Finalmente exportamos nuestro componente `Header` mediante `export default class Header`.
 
-De esta manera nuestro nuevo componente `Header` podrá ser utilizado/llamado de forma independiente por cualquier otro componente o aplicación.
+De esta manera nuestro nuevo componente `Header` podrá ser **utilizado/llamado** de forma independiente por cualquier otro componente o aplicación.
 
-Nuestro archivo **Header.html** debe quedar así:
+Nuestro archivo **Header.jsx** debería quedar así:
 
 ```jsx
 import React from 'react';
@@ -189,9 +189,15 @@ export default class Header extends React.Component {
 
 Creamos el archivo: **app/TallerReact1.jsx**, en donde importamos `react`, `react-dom` y nuestro componente anteriormente creado `Header`.
 
+Declaramos la constante `header`, que contendrá una instancia de nuestro componente `Header` y además asignandole a su propiedad **title** el valor: *'Taller Web React JS'*.
+
 Luego definimos la constante `nodoContenedor` que será el nodo html que contendrá nuestro componente, que para este caso es un div con el id: `divTallerReact1`.
 
-Finalmente mediante `react-dom` renderizaremos nuestro componente  `Header`, asignando a la propiedad **name** el valor: *'Taller Web React JS'*.
+Luego definimos la *función* `renderizacion`, en la cual simplemente renderizaremos la instancia de nuestro componente `Header`, dentro del `nodoContenedor` de nuestra Aplicación, mediante el método `render()` de ReactDOM.
+
+Finalmente ejecutamos la *función* `renderizacion`.
+
+Nuestro archivo **TallerReact1.jsx** debería quedar así:
 
 ```jsx
 
@@ -208,13 +214,6 @@ const renderizacion = () => {
 }
 
 renderizacion();
-
-if (module.hot) {
-  module.hot.accept( () => {
-    renderizacion();
-  });
-}
-
 ```
 
 > **Nota:**
