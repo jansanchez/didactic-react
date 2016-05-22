@@ -130,9 +130,11 @@ npm i -SD babel-loader babel-preset-es2015 babel-preset-react
 
 >Mediante la instrucción `npm i -SD` podemos instalar las dependencias de desarrollo de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `devDependencies` y allí se almacenen las dependencias de desarrollo de nuestro proyecto.
 
-**Listo!!!*** con esto hemos instalado todas las dependencias de nuestro proyecto.
+**Listo!!!** con esto hemos instalado todas las dependencias de nuestro proyecto.
 
 ## Taller React JS 1
+
+Para nuestro primer taller simplemente crearemos un componente llamado `Header`, el cuál contendrá una etiqueta `<h1>` con un título dinámico.  
 
 Inicialmente para realizar esta demo escribiremos los siguientes archivos:
 
