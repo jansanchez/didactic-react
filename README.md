@@ -1,6 +1,6 @@
 # Didactic-react
 
-En este artículo realizaremos una demo básica con React JS, y trataremos de explicar a detalle cada paso, para así poder entender la mayoría de conceptos que giran en torno al desarrollo de una Aplicación con React JS.
+En este artículo realizaremos una demo básica con React JS, y trataremos de explicar cada paso a detalle, para así poder entender la mayoría de conceptos que giran en torno al desarrollo de una Aplicación con React JS.
 
 Para esta demo básica usaremos 3 conceptos principales, los cuales son:
 
@@ -41,6 +41,22 @@ No es estrictamente necesario utilizar JSX con React. También se puede utilizar
 
 De momento para esta demo básica eso es todo lo que necesitamos saber sobre React JS, en los proximos artículos iremos profundizando más y más en los conceptos de React JS.
 
+## ¿Qué es Babel JS?
+
+Babel es un compilador multipropósito para Javascript. Usando Babel podemos codear en la nueva versión del estándar ECMAScript hoy mismo, sí, hoy mismo!.
+
+Javascript es un lenguaje en constante evolución, con nuevas propuestas, especificaciones y nuevas funcionalidades todo el tiempo. Babel nos permitirá usar muchas de estas características antes de que estén disponibles en todos lados.
+
+Lo que hace Babel es tomar el código Javascript escrito con los últimos estándares y compilarlo a su versión en ES5. Este proceso es llamado **compilación source-to-source**, mayormente conocido como transpiling.
+
+Babel cuenta con plugins y listas prestablecidas de plugins para ES2015 y React JS.
+
+### ¿Qué es ECMAScript 2015 (ES2015)?
+ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual fue estandarizada por el año 2009, es decir **hace más de 7 años**.
+
+Las características de ES2015 están siendo implementadas en Node.JS y poco a poco [en la mayoría de navegadores actuales](http://kangax.github.io/compat-table/es6/), debido a esto usaremos ES2015 para codear todas las demos con React JS.
+
+
 ## ¿Qué es Webpack?
 Webpack es un enpaquetador de módulos, toma módulos que por lo general tienen dependencias y genera archivos estáticos correspondientes a dichos módulos.
 
@@ -55,37 +71,11 @@ Webpack-dev-server es un pequeño servidor express, que utiliza *webpack-dev-mid
 
 Hay varios modos de cómo trabajar con webpack-dev-server, pero para nuestro caso usaremos estos eventos para recargar sólo los componentes que se hayan actualizado, de esa forma podremos agilizar más nuestro desarrollo.
 
-### ¿Qué es un loader?
-aaaaaaaaaaa
+### ¿Qué es un Webpack loader?
 
-## ¿Qué es Babel JS?
+Los loaders son transformaciones que se aplican en un archivo fuente. Son funciones (que se ejecutan en Node.JS) que toman el código fuente de un archivo como parámetro y retornan ese código fuente aplicandole alguna transformación.
 
-Babel es un compilador multipropósito para Javascript. Usando Babel podemos codear en la nueva versión del estándar ECMAScript hoy mismo, sí, hoy mismo!. ¿No es una gran noticia?.
-
-Javascript es un lenguaje en constante evolución, con nuevas propuestas, especificaciones y nuevas funcionalidades todo el tiempo. Babel nos permitirá usar muchas de estas características antes de que estén disponibles en todos lados.
-
-Lo que hace Babel es tomar el código Javascript escrito con los últimos estándares y compilarlo a su versión en ES5. Este proceso es llamado **compilación source-to-source**, mayormente conocido como transpiling.
-
-### ¿Qué es ECMAScript 2015 (ES2015)?
-ECMAScript 2015 es la nueva versión del estándar ECMAScript, y como bien sabemos Javascript está basado en este estándar. Esta norma fue ratificada en junio de 2015. ES2015 es una importante actualización de este estándar, y es la primera actualización importante desde la ES5, la cual fue estandarizada por el año 2009, es decir **hace más de 7 años**.
-
-Las características de ES2015 están siendo implementadas en Node.JS y poco a poco [en la mayoría de navegadores actuales](http://kangax.github.io/compat-table/es6/), debido a esto usaremos ES2015 para codear todas las demos con React JS.
-
-
-### ¿Qué es Node.JS?
-Node.js es un entorno de ejecución multiplataforma para el desarrollo de aplicaciones web a nivel de servidor. Si un módulo o paquete no existe en la bibli0oteca nativa de Node.JS, entonces se puede crear y publicar por cualquier persona común y corriente, gracias a que se pueden escribir nuevos módulos y/o paquetes independientes par0a Node.JS, sólo necesitas saber un poco de Javascript para poder hacerlo.
-
-El entorno de ejecución interpreta Javascript usando el motor V8 de JavaScript de Google.
-
-Para el desarrollo de estos demos básicos usaremos paquetes hechos en Node.JS, por lo cual debemos conocer algo de Node.js.
-
-### ¿Qué es Express JS?
-
-Express JS es una infraestructura de aplicaciones web Node.js mínima y flexible que proporciona un conjunto sólido de características para las aplicaciones web y móviles.
-
-
-
-
+Para nuestra demo utilizaremos babel-loader, que es un plugin de Webpack para  transpilar archivos Javascript. Y lo haremos mediante las **presets** de Babel, también conocidas como **listas preestablecidas de plugins**. Para nuestro caso usaremos la lista de plugins para `es2015` y `react`.
 
 Conociendo estos conceptos básicos ya podemos comenzar a hacer nuestra demo, así que pongamos manos a la obra!.
 
