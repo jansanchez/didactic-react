@@ -5,8 +5,8 @@ En este artículo realizaremos una demo básica con React JS, y trataremos de ex
 Para esta demo básica usaremos 3 conceptos principales, los cuales son:
 
 - React JS
-- Webpack
 - Babel JS
+- Webpack
 
 ## ¿Qué es React JS?
 
@@ -37,9 +37,7 @@ XML tiene el beneficio de las etiquetas de apertura y cierre. Esto hace que las 
 
 No es estrictamente necesario utilizar JSX con React. También se puede utilizar Javascript puro para realizar esta tarea. Sin embargo, se recomienda utilizar JSX porque es una sintaxis concisa y familiar para la definición de estructuras de árbol y sus atributos.
 
-> Ya que en nuestras demos utilizaremos **.jsx**, les recomiendo instalar el plugin o paquete para que su respectivo editor de texto reconozca esta sintaxis.
-
-De momento para esta demo básica eso es todo lo que necesitamos saber sobre React JS, en los proximos artículos iremos profundizando más y más en los conceptos de React JS.
+De momento para esta demo básica eso es todo lo que necesitamos saber sobre React JS, en los próximos artículos iremos profundizando más y más en los conceptos de React JS.
 
 ## ¿Qué es Babel JS?
 
@@ -80,36 +78,61 @@ Para nuestra demo utilizaremos babel-loader, que es un plugin de Webpack para  t
 Conociendo estos conceptos básicos ya podemos comenzar a hacer nuestra demo, así que pongamos manos a la obra!.
 
 
-### Pre-requisitos
+## Pre-requisitos
 
-Antes de comenzar necesitamos tener instalado en nuestra computadora: Node.JS en su versión 4.4.4 como mínimo, recordandoles que a fin de año se le [quitará el soporte a la versión 0.12 ](https://github.com/nodejs/LTS#lts_schedule).
+Antes de comenzar necesitamos tener instalado [Node.JS](http://frontendlabs.io/232--como-instalar-node-js-debian-linux) en su versión 4.4.4 como mínimo, recuerden que a fin de este año se le [dejará de dar mantenimiento a la versión 0.12 de Node.JS](https://github.com/nodejs/LTS#lts_schedule), por lo cual les recomiendo ir migrando de versión.
 
-Si deseas tener instalada la versión 4.3.0 o una versión mayor sólo para estás demos, no te preocupes para eso existe un gran paquete Node.JS llamado n, el cual soluciona esta situación de una manera genial, que te explicamos en [nuestro artículo sobre n](http://frontendlabs.io/3397--node-js-como-trabajar-multiples-versiones-de-node-version-manager).
+> Si deseas tener instalada la versión 4.4.4 o una versión mayor sólo para estás demos, no te preocupes para eso existe un gran paquete Node.JS llamado n, el cual soluciona esta situación de una manera genial, pero eso te explicamos en [nuestro artículo sobre n](http://frontendlabs.io/3397--node-js-como-trabajar-multiples-versiones-de-node-version-manager).
 
-Resuelto esto ahora si pasamos a crear el proyecto desde cero e instalar las dependencias y dependencias de desarrollo que necesitaremos.
+Además necesitamos que nuestro editor de texto reconozca la sintaxis `.jsx` y `ES2015`, así que dependiendo de tu editor deberás realizar la instalación de esos paquetes o plugins.
+
+Resuelto esto ahora sí pasamos a crear el proyecto desde cero e instalar las dependencias y dependencias de desarrollo que necesitaremos.
+
+## Iniciando el proyecto
+
+Creamos nuestra carpeta para el primer taller web de React JS e ingresamos a ella.
+
+```
+mkdir taller-react-1 && cd taller-react-1
+```
+
+Luego daremos por iniciado nuestro proyecto creando interactivamente nuestro archivo `package.json`, con la siguiente instrucción:
+
+```
+npm init --force
+```
+
+>Mediante la instrucción `npm init --force` o `npm init -f` evitamos todas las preguntas incomodas de `npm init`.
 
 ### Instalación de dependencias
 
-Primero necesitamos
-
-```
-npm init
-```
+Primero instalamos las dependencias principales de nuestro proyecto, las cuales son: `react` y `react-dom`:
 
 ```
 npm i -S react react-dom
 ```
 
+>Mediante la instrucción `npm i -S` podemos instalar las dependencias de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `dependencies` y allí se almacenen las dependencias principales de nuestro proyecto.
+
 ### Instalación de dependencias de desarrollo
 
+Luego instalamos las dependencias de desarrollo que usaremos para Webpack
+
 ```
-npm i -SD babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server
+npm i -SD webpack webpack-dev-server
 ```
 
-Explicar con que se hará... como: npm scripts tasks
+Luego instalamos las dependencias de desarrollo que usaremos para Babel JS
 
+```
+npm i -SD babel-loader babel-preset-es2015 babel-preset-react
+```
 
-## Paso 1
+>Mediante la instrucción `npm i -SD` podemos instalar las dependencias de desarrollo de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `devDependencies` y allí se almacenen las dependencias de desarrollo de nuestro proyecto.
+
+Y listo!!! con eso hemos instalado todas las dependencias para comenzar a trabajar con React JS.
+
+## Taller React JS 1
 Para realizar el ejemplo más básico del uso de ReactJS escribiremos los siguientes archivos:
 
 - public/index.html
@@ -145,7 +168,7 @@ De esta manera nuestro nuevo componente `MiComponente` podrá ser utilizado/llam
 ```jsx
 import React from 'react';
 
-class MiComponente extends React.Component {
+export default class MiComponente extends React.Component {
     render() {
       return (
         <div>
@@ -155,8 +178,6 @@ class MiComponente extends React.Component {
       );
     }
 }
-
-module.exports = MiComponente;
 ```
 
 ### app/paso1.jsx

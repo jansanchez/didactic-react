@@ -1,9 +1,5 @@
-var webpack = require('webpack');
 var path = require('path');
-
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.join(ROOT_PATH, '/app/');
-var PUBLIC_PATH = path.join(ROOT_PATH, '/public/');
 var BUILD_PATH = path.join(ROOT_PATH, '/public/static/js/');
 
 module.exports = {
