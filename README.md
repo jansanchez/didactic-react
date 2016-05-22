@@ -130,11 +130,11 @@ npm i -SD babel-loader babel-preset-es2015 babel-preset-react
 
 >Mediante la instrucción `npm i -SD` podemos instalar las dependencias de desarrollo de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `devDependencies` y allí se almacenen las dependencias de desarrollo de nuestro proyecto.
 
-**Listo!!!** con esto hemos instalado todas las dependencias de nuestro proyecto.
+Con esto hemos instalado todas las dependencias de nuestro proyecto, ahora sí comenzemos a desarrollar nuestro primer taller!.
 
 ## Taller React JS 1
 
-Para nuestro primer taller simplemente crearemos un componente llamado `Header`, el cuál contendrá una etiqueta `<h1>` con un título dinámico.  
+Para nuestro primer taller simplemente crearemos un componente llamado `Header`, el cuál contendrá una etiqueta `<h1>` con un título dinámico, mediante el título dinámico veremos como funcionan las `props` de los componentes en React JS.
 
 Inicialmente para realizar esta demo escribiremos los siguientes archivos:
 
@@ -168,7 +168,7 @@ Nuestro archivo **index.html** debería quedar así:
 Luego crearemos el archivo **app/components/Header.jsx** en el cual declararemos la clase `Header`, que como podemos observar hereda todo lo que ofrece la clase `React.Component`, mediante la palabra clave `extends`.
 
 Luego sobreescribiremos el método `render()`, insertando el contenido de nuestro componente. Para este ejemplo de componente retornaremos un `div` conteniendo una etiqueta `<h1>`, dentro del cual escribiremos `{this.props.title}` para mostrar el valor de la propiedad `title` de nuestro componente. Finalmente exportamos nuestro componente `Header` mediante `export default class Header`.
-
+``
 De esta manera nuestro nuevo componente `Header` podrá ser **utilizado/llamado** de forma independiente por cualquier otro componente o aplicación.
 
 Nuestro archivo **Header.jsx** debería quedar así:
@@ -222,6 +222,70 @@ renderizacion();
 Dentro del componente el valor de la propiedad **title** puede ser capturado mediante la siguiente instrucción: `{this.prop.title}`.
 
 El archivo: **app/TallerReact1.jsx**,  será el punto de inicio de nuestra aplicación de ejemplo, pero como sabemos el navegador no reconocerá la extensión **.jsx**, ni la versión ES2015 de Javascript, por lo cual necesitamos convertirlo en un archivo **.js** basado en ES5, para eso utilizaremos webpack y babel.
+
+
+### webpack.config.js
+
+```js
+var path = require('path');
+var ROOT_PATH = path.resolve(__dirname);
+var BUILD_PATH = path.join(ROOT_PATH, '/public/static/js/');
+
+module.exports = {
+  entry: {
+    tallerReact1: ['webpack/hot/dev-server', './app/TallerReact1']
+  },
+  output: {
+    path: BUILD_PATH,
+    filename: '[name].js',
+    chunkFilename: '[id].js'
+  },
+  resolve: {
+    extensions: ['', '.jsx', '.js']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  }
+};
+```
+
+
+### package.json
+
+```json
+{
+  "name": "taller-react-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
+```
 
 
 https://babeljs.io/docs/learn-es2015/
