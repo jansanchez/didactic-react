@@ -268,7 +268,8 @@ module.exports = {
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "webpack-dev-server --inline --hot --content-base ./public/",
+    "build": "webpack -w -p"
   },
   "keywords": [],
   "author": "",
